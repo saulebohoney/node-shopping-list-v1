@@ -26,28 +26,26 @@ app.get('/shopping-list', (req, res) => {
   res.json(ShoppingList.get());
 });
 
+app.post('/shopping-list/items', (req, res) => {
+  res.json(ShoppingList.create('eggs', 2));
+});
+
 //GET All Recipes
-app.get('/recipes', (req, res) => {
-  res.json({message:'getallrecipes'});
-});
+// app.get('/recipes', (req, res) => {
+//   res.json({message:'getallrecipes'});
+// });
 //GET SPECIFIC RECIPES
-app.get('/recipes/:id', (req, res) => {
-  res.json({message:`getaspecificrecipes ${req.params.id}`});
-});
+// app.get('/recipes/:id', (req, res) => {
+//   res.json({message:`getaspecificrecipes ${req.params.id}`});
+// });
 //CREATE RECIPES
-app.post('/recipes', (req, res) => {
-  res.json({message:'createrecipes'});
-});
-app.post('/recipes/:chocolate milk'), (req, res) => {
-  res.json({message:'chocolate milk'});
-});
-
-
-//Recipes.create('chocolate milk', ['cocoa', 'milk', 'sugar'])
+// app.post('/recipes', (req, res) => {
+//   res.json({message:'createrecipes'});
+// });
 //DELETE RECIPES
-app.delete('/recipes/:id', (req, res) => {
-  res.json({message:'deleterecipes'});
-});
+// app.delete('/recipes/:id', (req, res) => {
+//   res.json({message:'deleterecipes'});
+// });
 
 
 app.listen(process.env.PORT || 8080, () => {
